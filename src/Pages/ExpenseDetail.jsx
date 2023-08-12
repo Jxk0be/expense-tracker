@@ -6,7 +6,7 @@ const ExpenseDetail = () => {
 
   return (
     <div>
-    <h1><Link to="/expenses">Full Expenses List</Link></h1>
+    <h1><Link to="/expenses">Back</Link></h1>
     { ExpenseId }
     </div>
   )
