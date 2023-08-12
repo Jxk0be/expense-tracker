@@ -1,6 +1,8 @@
 import React from 'react'
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Navbar from '../Components/Navbar';
+import { addDoc, collection } from 'firebase/firestore';
+import { db } from '../firebase';
 
 const Create = () => {
   const [checked, setChecked] = useState(false)
@@ -37,13 +39,23 @@ const Create = () => {
   }
 
   const handleFormObject = () => {
-    setFormObject({
+    if (title === "" || amount < 0) {
+      alert("Please enter a valid expense")
+      return
+    }
+    
+    asyncCreate()
+  }
+
+  const asyncCreate = async () => {
+    await addDoc(collection(db, 'expenses'), {
       "title": title,
       "amount": amount,
       "category": category,
       "notes": notes
     })
   }
+  const didMount = useRef(false);
 
   return (
   <div className='w-full h-screen flex justify-center'>

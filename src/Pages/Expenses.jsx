@@ -11,9 +11,7 @@ const Expenses = () => {
     const q = query(collection(db, 'expenses'))
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       let expensesArray = []
-      console.log("HERE")
       querySnapshot.forEach((doc) => {
-        console.log("here")
         expensesArray.push({...doc.data(), id: doc.id})
       })
       setExpenses(expensesArray)
@@ -26,8 +24,8 @@ const Expenses = () => {
       <Navbar />
       <div className='pt-[65px] max-w-[1500px] px-6 w-full flex flex-col items-center text-xl font-semibold'>
         <h1 className='text-3xl'>Expenses</h1>
-        {expenses.map((exp) => (
-          <h1><Link to={exp.id}>{exp.title}</Link></h1>
+        {expenses.map((exp, index) => (
+          <h1 key={index}><Link to={exp.id}>{exp.title}</Link></h1>
         ))}
       </div>
     </div>
