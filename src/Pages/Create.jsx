@@ -5,7 +5,7 @@ import Navbar from '../Components/Navbar';
 const Create = () => {
   const [checked, setChecked] = useState(false)
   const [title, setTitle] = useState('')
-  const [amount, setAmount] = useState(0)
+  const [amount, setAmount] = useState(0.00)
   const [category, setCategory] = useState('')
   const [notes, setNotes] = useState('')
   const [formObject, setFormObject] = useState(
@@ -52,19 +52,19 @@ const Create = () => {
       <h1>Add an Expense</h1>
       <div>
         <h1>Title</h1>
-        <input type='text' className='bg-red-50 mb-5' value={title} onChange={(e) => handleTitle(e)}/>
+        <input type='text' className='bg-red-50 mb-5' value={title} onChange={(e) => handleTitle(e)} />
 
         <h1>Amount</h1>
-        <input type='number' className='bg-red-50 mb-5' value={amount} onChange={(e) => handleAmount(e)}/>
+        <input type='number' className='bg-red-50 mb-5' value={amount} onChange={(e) => handleAmount(e)} />
         
         <h1>Category</h1>
-        <input type='text' className='bg-red-50 mb-5' value={category} onChange={(e) => handleCategory(e)}/>
+        <input type='text' className='bg-red-50 mb-5' value={category} onChange={(e) => handleCategory(e)} />
         
         <h1>Notes</h1>
-        <input type='checkbox' onChange={() => setChecked(!checked)} className={`bg-red-50 ${checked ? '' : 'mb-5'}`}/>
+        <input type='checkbox' onChange={() => setChecked(!checked)} className={`bg-red-50 ${checked ? '' : 'mb-5'}`} />
         {checked ?
           <div className='mb-5'>
-            <textarea value={notes} onChange={(e) => handleNotes(e)}/>
+            <textarea value={notes} onChange={(e) => handleNotes(e)} />
           </div> : 
           ''
         }
