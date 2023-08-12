@@ -8,3 +8,7 @@ html {
   border: 0;
   box-sizing: border-box;
 }
+
+.customBG {
+  background-image: linear-gradient(to bottom, #0e52b9, #006bc6, #0081cd, #0096d0, #19a9d1);
+}
