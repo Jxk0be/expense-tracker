@@ -2,7 +2,6 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Create from "./Pages/Create";
 import Expenses from "./Pages/Expenses";
 import ExpenseDetail from "./Pages/ExpenseDetail";
-import Navbar from "./Components/Navbar";
 import './App.css'
 
 const router = createBrowserRouter([
@@ -21,10 +20,9 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-
   return (
     <>
-      <RouterProvider  router={router} ></RouterProvider>
+      <RouterProvider router={router} />
     </>
   )
 }
