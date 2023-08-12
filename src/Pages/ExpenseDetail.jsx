@@ -6,7 +6,6 @@ import { query, collection, onSnapshot } from 'firebase/firestore';
 
 const ExpenseDetail = () => {
   let { ExpenseId } = useParams();
-
   const [expenses, setExpenses] = useState([])
 
   useEffect(() => {
