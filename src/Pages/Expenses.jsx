@@ -26,8 +26,8 @@ const Expenses = () => {
       <Navbar />
       <div className='pt-[65px] max-w-[1500px] px-6 w-full flex flex-col items-center text-xl font-semibold'>
         <h1 className='text-3xl underline'>Expenses</h1>
-        {expenses.map((exp, index) => (
-          <h1 key={index}><Link to={exp.id}>{exp.title}</Link></h1>
+        {expenses.map(exp => (
+          <h1 key={exp.id}><Link to={exp.id}>{exp.title}</Link></h1>
         ))}
       </div>
     </div>
