@@ -27,7 +27,14 @@ const Expenses = () => {
       <div className='pt-[65px] max-w-[1500px] px-6 w-full flex flex-col items-center text-xl font-semibold'>
         <h1 className='text-3xl underline'>Expenses</h1>
         {expenses.map(exp => (
-          <h1 key={exp.id}><Link to={exp.id}>{exp.title}</Link></h1>
+          <div key={exp.id} className='w-full flex justify-center items-center m-3'>
+            <Link to={exp.id} className='w-1/3 flex justify-center bg-blue-200 p-3 rounded-md'>
+              <div className='flex justify-between items-center w-full'>
+                <h1>{exp.title}</h1>
+                <h1>${exp.amount}</h1>
+              </div>
+            </Link>
+          </div>
         ))}
       </div>
     </div>
