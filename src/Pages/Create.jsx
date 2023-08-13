@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState, useEffect, useRef } from 'react';
+import { useState } from 'react';
 import Navbar from '../Components/Navbar';
 import { addDoc, collection } from 'firebase/firestore';
 import { db } from '../firebase';
@@ -10,17 +10,16 @@ const Create = () => {
   const [amount, setAmount] = useState(0.00)
   const [category, setCategory] = useState('')
   const [notes, setNotes] = useState('')
-  const [formObject, setFormObject] = useState(
-  {
-    "title": "",
-    "amount": null,
-    "category": "",
-    "notes": ""
-  })
+  const [creationDate, setCreationDate] = useState(null)
+
+
 
   const handleTitle = (e) => {
     e.preventDefault();
     setTitle(e.target.value);
+
+    const myDate = new Date().getTime();
+    setCreationDate(myDate)
   }
 
   const handleAmount = (e) => {
@@ -52,10 +51,10 @@ const Create = () => {
       "title": title,
       "amount": amount,
       "category": category,
-      "notes": notes
+      "notes": notes,
+      "date": creationDate
     })
   }
-  const didMount = useRef(false);
 
   return (
   <div className='w-full h-screen flex justify-center'>
@@ -81,13 +80,6 @@ const Create = () => {
           ''
         }
         <h1><button className='bg-red-50 mb-5' onClick={() => handleFormObject()}>Add Expense</button></h1>
-        {/*
-          Expense Title (input field)
-          Expense Amount (Input field, but have a dropdown to enter yen vs USD)
-          Expense Category (Create your own, maybe looks at backend to see all categories in a dropdown menu and shows them)
-          Expense Optional Notes (Checkbox, if checked text box appears)
-          Add button (button)
-        */}
       </div>
     </div>
   </div>

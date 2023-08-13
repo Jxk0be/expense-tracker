@@ -14,6 +14,8 @@ const Expenses = () => {
       querySnapshot.forEach((doc) => {
         expensesArray.push({...doc.data(), id: doc.id})
       })
+
+      expensesArray.sort(function(a, b) { return b.date - a.date })
       setExpenses(expensesArray)
     })
     return () => unsubscribe()
