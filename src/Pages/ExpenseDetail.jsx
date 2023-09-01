@@ -24,8 +24,12 @@ const ExpenseDetail = () => {
     <div className='w-full h-screen flex justify-center'>
       <Navbar />
       <div className='pt-[65px] max-w-[1500px] px-6 w-full'>
-        {expenses.filter((exp) => exp.id === ExpenseId).map((exp, index) => (
-          <h1 key={index}>{exp.title}</h1>
+        {expenses.filter((exp) => exp.id === ExpenseId).map(exp => (
+          <div key={exp.id}>
+            <h1>{exp.title}</h1>
+            <h1>${exp.amount}</h1>
+            <p>{exp.notes}</p>
+          </div>
         ))}
       </div>
     </div>
