@@ -7,12 +7,10 @@ import { db } from '../firebase';
 const Create = () => {
   const [checked, setChecked] = useState(false)
   const [title, setTitle] = useState('')
-  const [amount, setAmount] = useState(0.00)
+  const [amount, setAmount] = useState(0)
   const [category, setCategory] = useState('')
   const [notes, setNotes] = useState('')
   const [creationDate, setCreationDate] = useState(null)
-
-
 
   const handleTitle = (e) => {
     e.preventDefault();
@@ -54,6 +52,10 @@ const Create = () => {
       "notes": notes,
       "date": creationDate
     })
+    setTitle("");
+    setAmount(0);
+    setCategory("");
+    setNotes("");
   }
 
   return (
