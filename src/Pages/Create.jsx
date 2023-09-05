@@ -73,14 +73,11 @@ const Create = () => {
         <h1>Category</h1>
         <input type='text' className='bg-red-50 mb-5' value={category} onChange={(e) => handleCategory(e)} />
         
-        <h1>Notes</h1>
-        <input type='checkbox' onChange={() => setChecked(!checked)} className={`bg-red-50 ${checked ? '' : 'mb-5'}`} />
-        {checked ?
-          <div className='mb-5'>
-            <textarea value={notes} onChange={(e) => handleNotes(e)} />
-          </div> : 
-          ''
-        }
+        <h1>Optional Notes</h1>
+        <div className='mb-5'>
+          <textarea className='bg-blue-200 rounded-md' value={notes} onChange={(e) => handleNotes(e)} />
+        </div>
+
         <h1><button className='bg-red-50 mb-5' onClick={() => handleFormObject()}>Add Expense</button></h1>
       </div>
     </div>
