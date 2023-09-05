@@ -38,14 +38,14 @@ const Expenses = () => {
           !expenses.length ? <h1 className='text-3xl mt-5'>Sorry, <Link className="underline" to="/">add an expense</Link></h1> :
           expenses.map(exp => (
             <div key={exp.id} className='w-full flex justify-center items-center m-3'>
-              <div className='w-1/3 flex justify-center items-center bg-blue-200 p-3 rounded-md'>
-                <Link to={exp.id} className='w-full h-full flex justify-center bg-blue-200'>
+              <div className='w-1/3 flex justify-center items-center bg-blue-200 min-w-[250px] p-3 rounded-md'>
+                <Link to={exp.id} className='w-full h-full flex justify-center'>
                   <div className='flex justify-between items-center w-full h-full'>
                     <h1>{exp.title}</h1>
                     <h1>${exp.amount}</h1>
                   </div>
                 </Link>
-                <Icon onClick={() => deleteExpense(exp.id)} className='cursor-pointer relative right-0 pl-2 text-[30px]' icon="ph:trash-fill" />
+                <Icon onClick={() => deleteExpense(exp.id)} className='cursor-pointer relative right-0 pl-2 text-[30px] z-20' icon="ph:trash-fill" />
               </div>
             </div>
           ))

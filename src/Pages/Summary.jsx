@@ -40,8 +40,8 @@ const Summary = () => {
         <h1 className='text-3xl underline'>Summary</h1>
         {loading ? 
           <Icon icon="line-md:loading-loop" className='text-[50px] mt-5' /> : 
-          <div className='w-full flex justify-center items-center m-3'>
-            <h1>${runSum}</h1>
+          <div className='w-full flex justify-center items-center m-3 text-[30px] font-bold text-red-600'>
+            <h1>-${runSum}</h1>
           </div>
         }
       </div>
