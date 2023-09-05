@@ -45,7 +45,7 @@ const Expenses = () => {
                     <h1>${exp.amount}</h1>
                   </div>
                 </Link>
-                <Icon onClick={() => deleteExpense(exp.id)} className='cursor-pointer relative right-0 pl-2 text-[30px] z-20' icon="ph:trash-fill" />
+                <Icon onClick={() => deleteExpense(exp.id)} className='hover:scale-105 hover:rotate-6 duration-150 text-white cursor-pointer relative right-0 pl-2 text-[30px] z-20' icon="ph:trash-fill" />
               </div>
             </div>
           ))
