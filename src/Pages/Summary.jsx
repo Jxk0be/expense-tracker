@@ -29,6 +29,7 @@ const Summary = () => {
     for (let i = 0; i < expenses.length; ++i) {
       rSum += (parseFloat(expenses[i].amount));
     }
+    rSum = rSum.toFixed(2)
     setRunSum(rSum);
   }, [expenses]);
 

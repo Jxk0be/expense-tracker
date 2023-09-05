@@ -19,7 +19,7 @@ const ExpenseDetail = () => {
     })
     return () => unsubscribe()
   }, [])
-
+  
   return (
     <div className='w-full h-screen flex justify-center'>
       <Navbar />
@@ -27,7 +27,7 @@ const ExpenseDetail = () => {
         {expenses.filter((exp) => exp.id === ExpenseId).map(exp => (
           <div key={exp.id}>
             <h1>{exp.title}</h1>
-            <h1>${exp.amount}</h1>
+            <h1>${parseFloat(exp.amount).toFixed(2)}</h1>
             <p>{exp.notes}</p>
           </div>
         ))}

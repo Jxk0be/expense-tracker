@@ -62,7 +62,7 @@ const Create = () => {
   <div className='w-full h-screen flex justify-center'>
     <Navbar />
     <div className='pt-[65px] max-w-[1500px] px-6 w-full flex flex-col items-center text-3xl font-semibold'>
-      <h1>Add an Expense</h1>
+      <h1 className='underline'>Add an Expense</h1>
       <div>
         <h1>Title</h1>
         <input type='text' className='bg-red-50 mb-5' value={title} onChange={(e) => handleTitle(e)} />
