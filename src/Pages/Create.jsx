@@ -11,6 +11,11 @@ const Create = () => {
   const [category, setCategory] = useState('')
   const [notes, setNotes] = useState('')
   const [creationDate, setCreationDate] = useState(null)
+  const [type, setType] = useState("expense");
+
+  const handleType = (type) => {
+    setType(type);
+  }
 
   const handleTitle = (e) => {
     e.preventDefault();
@@ -40,8 +45,8 @@ const Create = () => {
       alert("Please enter a valid expense")
       return
     }
-    
-    asyncCreate()
+
+    asyncCreate();
   }
 
   const asyncCreate = async () => {
@@ -50,7 +55,8 @@ const Create = () => {
       "amount": amount,
       "category": category,
       "notes": notes,
-      "date": creationDate
+      "date": creationDate,
+      "type": type
     })
     setTitle("");
     setAmount(0);
@@ -64,6 +70,10 @@ const Create = () => {
     <div className='pt-[65px] max-w-[1500px] px-6 w-full flex flex-col items-center text-3xl font-semibold'>
       <h1 className='underline'>Add an Expense</h1>
       <div>
+        <div className='flex w-full h-[100px] text-white justify-around items-center'>
+          <h1 onClick={() => handleType("expense")} className='bg-blue-600 py-1 cursor-pointer rounded-lg w-2/5 min-w-[100px] text-center'>Expense</h1>
+          <h1 onClick={() => handleType('profit')} className='bg-blue-600 py-1 cursor-pointer rounded-lg w-2/5 min-w-[100px] text-center'>Profit</h1>
+        </div>
         <h1>Title</h1>
         <input type='text' className='bg-red-50 mb-5' value={title} onChange={(e) => handleTitle(e)} />
 

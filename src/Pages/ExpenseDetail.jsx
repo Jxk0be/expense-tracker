@@ -35,6 +35,7 @@ const ExpenseDetail = () => {
               <h1>{exp.title}</h1>
               <h1>${parseFloat(exp.amount).toFixed(2)}</h1>
               <p>{exp.notes}</p>
+              <p>{exp.type}</p>
             </div>
           ))}
       </div>
